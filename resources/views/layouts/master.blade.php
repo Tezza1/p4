@@ -28,9 +28,26 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Data</a></li>
+                    <!-- DROP DOWN LIST -->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Clients<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">New client</a></li>
+                            <li><a href="#">Update client</a></li>
+                        </ul>
+                    </li>
+                    <!-- DROP DOWN LIST -->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Training<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">New training</a></li>
+                            <li><a href="#">Update training</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Search</a></li>
-                    <li><a href="#">Other</a></li>
+                    <li><a href="#">Request delete</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </nav>

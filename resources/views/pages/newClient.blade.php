@@ -1,7 +1,7 @@
 @extends("layouts.master")
 
 @section("title")
-    Main Page
+    Add client
 @endsection
 
 @section("headline")
@@ -13,7 +13,7 @@
 @endsection
 
 @section("forms")
-
+	<p>This is the form section</p>
 @endsection
 
 @section("error")
@@ -23,6 +23,3 @@
 @section("output")
 	<p>This is the output</p>
 @endsection
-
-
-
