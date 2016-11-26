@@ -28,18 +28,32 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <!-- DROP DOWN LIST -->
+                    <!-- DROP DOWN LIST PROSPECTS -->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Prospects<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="prospects">New prospect</a></li>
+                            <li><a href="#">Update prospect</a></li>
+                        </ul>
+                    </li>
+                    <!-- DROP DOWN LIST CLIENTS-->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Clients<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">New client</a></li>
                             <li><a href="#">Update client</a></li>
                         </ul>
                     </li>
-                    <!-- DROP DOWN LIST -->
+                    <!-- DROP DOWN LIST TRAINING-->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Training<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">New training</a></li>
                             <li><a href="#">Update training</a></li>
+                        </ul>
+                    </li>
+                    <!-- DROP DOWN LIST OPEN COURSES-->
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Open Courses<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">HOC</a></li>
+                            <li><a href="#">LOC</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Search</a></li>
@@ -72,7 +86,7 @@
     <footer>
             <div class="container-fluid">
                 <div class="well">
-                    <h4>The Client Trackers</h4>
+                    <a href="#">Client Tracker</a>
                 </div>
             </div>
     </footer>

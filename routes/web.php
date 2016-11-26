@@ -14,3 +14,7 @@
 Route::get("/", function () {
     return view("home");
 });
+
+Route::get("prospects", function(){
+	return view("p4.prospects");
+});

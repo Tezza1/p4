@@ -1,4 +1,4 @@
-@extends("layouts.master")
+@extends("p4.layouts.master")
 
 @section("title")
     Main Page
