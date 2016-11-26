@@ -1,4 +1,4 @@
-# Laravel PHP Framework
+# P4 Laravel Framework Project for Dynamic Web Applications
 This is the project for dwa15 - fall 2016
 
 ## Project aim
