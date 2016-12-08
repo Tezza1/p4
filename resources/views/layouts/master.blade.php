@@ -33,6 +33,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="prospects">New prospect</a></li>
                             <li><a href="#">Update prospect</a></li>
+                            <li><a href="#">Search</a></li>
                         </ul>
                     </li>
                     <!-- DROP DOWN LIST CLIENTS-->
@@ -40,6 +41,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">New client</a></li>
                             <li><a href="#">Update client</a></li>
+                            <li><a href="#">Search</a></li>
                         </ul>
                     </li>
                     <!-- DROP DOWN LIST TRAINING-->
@@ -47,6 +49,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">New training</a></li>
                             <li><a href="#">Update training</a></li>
+                            <li><a href="#">Search</a></li>
                         </ul>
                     </li>
                     <!-- DROP DOWN LIST OPEN COURSES-->
@@ -54,9 +57,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="#">HOC</a></li>
                             <li><a href="#">LOC</a></li>
+                            <li><a href="#">Search</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Search</a></li>
                     <li><a href="#">Request delete</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

@@ -1,4 +1,4 @@
-@extends("p4.layouts.master")
+@extends("layouts.master")
 
 @section("title")
     Main Page
@@ -9,7 +9,7 @@
 @endsection
 
 @section("overview")
-	<p>The this is the main page</p>
+	<p>The this is the main pages</p>
 @endsection
 
 @section("forms")
