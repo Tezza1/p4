@@ -89,7 +89,7 @@
             </div>
             <legend>Prospect information</legend>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="industry">Type of solution:</label>
+                <label class="control-label col-sm-2" for="typeTraining">Type of solution:</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="typeTraining">
                         <option value="auto">No training type selected</option>
@@ -104,17 +104,17 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <label class="checkbox-inline"><input type="checkbox" value="firstVisit">First visit</label>
-                    <label class="checkbox-inline"><input type="checkbox" value="needsHearing">Needs hearing</label>
-                    <label class="checkbox-inline"><input type="checkbox" value="proposal">Proposal submitted</label>
-                    <label class="checkbox-inline"><input type="checkbox" value="followUp">Follow-up visit</label>
-                    <label class="checkbox-inline"><input type="checkbox" value="quote">Quote submitted</label>
+                    <label class="checkbox-inline"><input type="checkbox" id="stage" value="firstVisit">First visit</label>
+                    <label class="checkbox-inline"><input type="checkbox" id="stage value="needsHearing">Needs hearing</label>
+                    <label class="checkbox-inline"><input type="checkbox" id="stage value="proposal">Proposal submitted</label>
+                    <label class="checkbox-inline"><input type="checkbox" id="stage value="followUp">Follow-up visit</label>
+                    <label class="checkbox-inline"><input type="checkbox" id="stage value="quote">Quote submitted</label>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="potential">Potential:</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="industry">
+                    <select class="form-control" id="potential">
                         <option value="20%">0 - 20% (Early days)</option>
                         <option value="40%">21% - 40% (Small chance)</option>
                         <option value="60%">41 - 60% (Reasonable chance)</option>

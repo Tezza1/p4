@@ -24,7 +24,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                <a class="navbar-brand" href="#">Client Tracker</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-grain"></span> Client Tracker</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
@@ -63,8 +63,13 @@
                     <li><a href="#">Request delete</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<!-- CUSTOMIZE BASED ON LOGIN STTAUS -->
+					@if(Auth::check())
+						<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					@else
+						<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
+					@endif                 
+					<li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                 </ul>
             </div>
         </nav>

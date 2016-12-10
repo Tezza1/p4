@@ -43,6 +43,8 @@ Route::get("display", function () {
     return view("display");
 });
 
+// DATABASES -------------------------------------------------------------
+
 // Test database connection
 Route::get('/debug', function() {
 	echo '<pre>';
@@ -65,3 +67,34 @@ Route::get('/debug', function() {
 	} catch (Exception $e) {
 		echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n"; } echo '</pre>'; });
 
+if(App::environment('local')) {
+
+    Route::get('/drop', function() {
+
+        DB::statement('DROP database p4');
+        DB::statement('CREATE database p4');
+
+        return 'Dropped foobooks; created p4.';
+    });
+
+};
+
+// AUTHENTIFICATION -------------------------------------------------------------
+
+Auth::routes();
+// Route::get('/logout','Auth\LoginController@logout')->name('logout');
+Route::get('/home', 'HomeController@index');
+
+
+Route::get('/show-login-status', function() {
+
+    # You may access the authenticated user via the Auth facade
+    $user = Auth::user();
+
+    if($user)
+        dump($user->toArray());
+    else
+        dump('You are not logged in.');
+
+    return;
+});

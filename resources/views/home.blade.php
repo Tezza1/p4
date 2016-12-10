@@ -1,28 +1,17 @@
-@extends("layouts.master")
+@extends('layouts.app')
 
-@section("title")
-    Main Page
+@section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
+
+                <div class="panel-body">
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
-
-@section("headline")
-	<h1>Welcome to the Coffee Break Coder</h1>
-@endsection
-
-@section("overview")
-	<p>The this is the main pages</p>
-@endsection
-
-@section("forms")
-
-@endsection
-
-@section("error")
-	<p>This is the error section</p>
-@endsection
-
-@section("output")
-	<p>This is the output</p>
-@endsection
-
-
-

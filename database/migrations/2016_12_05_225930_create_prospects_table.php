@@ -13,7 +13,7 @@ class CreateProspectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('books', function (Blueprint $table) {
+        Schema::create('prospects', function (Blueprint $table) {
 
             # Increments method will make a Primary, Auto-Incrementing field.
             # Most tables start off this way
@@ -22,15 +22,18 @@ class CreateProspectsTable extends Migration
             # This generates two columns: `created_at` and `updated_at` to keep track of changes to a row
             $table->timestamps();
 
-            # The rest of the fields...
-            $table->string('title');
-            $table->string('author')->nullable();
-            $table->integer('published');
-            $table->string('cover');
-            $table->string('purchase_link');
-
-            # FYI: We're skipping the 'tags' field for now; more on that later.
-
+            # The rest of the fields:
+            # string = varchar(255)
+            $table->string('rep');
+            $table->string('consultant');
+            $table->integer('region');
+            $table->string('company');
+            $table->string('industry')->nullable();
+            $table->string('contact')->nullable();
+            $table->text('additionalInfo')->nullable();
+            $table->string('typeTraining')->nullable();
+            $table->integer('potential');
+            $table->text('additionalInfo2')->nullable();
         });
     }
 
@@ -41,6 +44,6 @@ class CreateProspectsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('prospects');
     }
 }
