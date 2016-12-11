@@ -26,7 +26,7 @@ class CreateProspectsTable extends Migration
             # string = varchar(255)
             $table->string('rep');
             $table->string('consultant');
-            $table->integer('region');
+            $table->string('region');
             $table->string('company');
             $table->string('industry')->nullable();
             $table->string('contact')->nullable();

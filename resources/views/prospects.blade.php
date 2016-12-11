@@ -15,14 +15,14 @@
 
 @section("forms")
     <div class="container">
-        <form class="form-horizontal" method="post" action="/prospects">
+        <form class="form-horizontal" method="post" action="/prospects/store">
             {{ csrf_field() }}
             <legend>SD Contact Point</legend>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="sdRep">SD Rep:</label>
                 <div class="col-sm-10">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="sdRep" placeholder="Enter SD Rep">
+                        <input type="text" class="form-control" name="rep" id="rep" placeholder="Enter SD Rep">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     </div>
                 </div>

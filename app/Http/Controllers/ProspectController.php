@@ -3,6 +3,10 @@
 namespace p4\Http\Controllers;
 
 use Illuminate\Http\Request;
+# add these to work with Eloquent
+use DB;
+use Carbon;
+use p4\Prospect;
 
 class ProspectController extends Controller
 {
@@ -21,13 +25,44 @@ class ProspectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
 
         # validate form input -------------------
         $this->validate($request, [
             'propsect' => 'string|min:3|max:50',
          ]);
+
+        DB::table('prospects')->insert([
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+	        'rep' => 'test',
+	        'consultant' => 'test',
+	        'region' => 'test',
+	        'company' => 'Bayer test',
+	        'industry' => 'pharmaceutical',
+	        'contact' => 'Ms. Test',
+	        'typeTraining' => 'communications',
+	        'potential' => '40',
+        ]); 
+        
+        # Instantiate a new Book Model object
+        $prospect = new Prospect();
+        
+        # Set the parameters
+        # Note how each parameter corresponds to a field in the table
+        $prospect->$_POST["rep"];
+        $prospect->consultant = 'Michael Jones';
+        $prospect->region = 'kansai';
+        $prospect->company = 'Sony';
+        $prospect->industry = 'electronics';
+        $prospect->contact = 'Mr. Nakajima';
+        $prospect->typeTraining = 'leadership';
+        $prospect->potential = 60;
+
+        # Invoke the Eloquent save() method
+        # This will generate a new row in the `books` table, with the above data
+        $prospect->save();       
 
         return view("prospects");
     }
@@ -45,6 +80,25 @@ class ProspectController extends Controller
         $this->validate($request, [
             'propsect' => 'string|min:3|max:50|required',
          ]);
+
+        # Instantiate a new Book Prospect object
+        $prospect = new Prospect();
+
+        # Set the parameters
+        # Note how each parameter corresponds to a field in the table
+        $prospect->$request->input('rep');
+        $prospect->consultant = 'Michael Jones';
+        $prospect->region = 'kansai';
+        $prospect->company = 'Sony';
+        $prospect->industry = 'electronics';
+        $prospect->contact = 'Mr. Nakajima';
+        $prospect->typeTraining = 'leadership';
+        $prospect->potential = 60;
+
+        # Invoke the Eloquent save() method
+        # This will generate a new row in the `books` table, with the above data
+        $prospect->save();       
+
 
         return view("prospects");
     }
