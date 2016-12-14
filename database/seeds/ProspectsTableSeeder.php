@@ -14,53 +14,45 @@ class ProspectsTableSeeder extends Seeder
         DB::table('prospects')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'rep' => 'Hiroki Honda',
+	        'rep' => 'jill',
 	        'consultant' => 'Bob Smith',
-	        'region' => 'Tokyo',
-	        'company' => 'Bayer Pharma',
-	        'industry' => 'pharmaceutical',
+			'prospect' => 'Bayer Pharma',
 	        'contact' => 'Ms. Suzuki',
-	        'typeTraining' => 'communications',
-	        'potential' => '50',
+			'industry' => 'pharma',
+			'region' => 'kanto',
     	]);
 
         DB::table('prospects')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'rep' => 'Nobu Nakamura',
+	        'rep' => 'jamal',
 	        'consultant' => 'Bob Smith',
-	        'region' => 'Tokyo',
-	        'company' => 'Goldman Sachs',
-	        'industry' => 'financial',
-	        'contact' => 'Mr. Nakayama',
-	        'typeTraining' => 'leadership',
-	        'potential' => '80',
+			'prospect' => 'Goldman Sachs',
+			'contact' => 'Mr. Nakayama',
+			'industry' => 'financial',
+	        'region' => 'kanto',
     	]);
 
         DB::table('prospects')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'rep' => 'Shinichi Sato',
+	        'rep' => 'terry',
 	        'consultant' => 'Peter Maxwell',
-	        'region' => 'Tokai',
-	        'company' => 'Toyota',
-	        'industry' => 'automotive',
-	        'contact' => 'Ms. Ito',
-	        'typeTraining' => 'communications',
-	        'potential' => '40',
+			'prospect' => 'Toyota',
+			'contact' => 'Ms. Ito',
+			'industry' => 'auto',
+	        'region' => 'tokai',
     	]);
 
     	DB::table('prospects')->insert([
 	        'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'rep' => 'Shinichi Sato',
+	        'rep' => 'jill',
 	        'consultant' => 'Peter Maxwell',
-	        'region' => 'Kansai',
-	        'company' => 'Panasonic',
-	        'industry' => 'electronic',
-	        'contact' => 'Mr. Shimizu',
-	        'typeTraining' => 'interculture',
-	        'potential' => '80',
+	        'prospect' => 'Panasonic',
+			'contact' => 'Mr. Shimizu',
+			'industry' => 'telecom',
+			'region' => 'kansai',
     	]);
     }
 }

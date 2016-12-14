@@ -73,7 +73,7 @@ if(App::environment('local')) {
         DB::statement('DROP database p4');
         DB::statement('CREATE database p4');
 
-        return 'Dropped foobooks; created p4.';
+        return 'Dropped p4; created p4.';
     });
 
 };

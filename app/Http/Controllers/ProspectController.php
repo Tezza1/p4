@@ -31,23 +31,23 @@ class ProspectController extends Controller
     {
 
         # validate form input -------------------
-        $this->validate($request, [
-            'propsect' => 'string|min:3|max:50',
-         ]);
-/*
-        DB::table('prospects')->insert([
-            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'rep' => $request->input('rep'),
-	        'consultant' => 'test',
-	        'region' => 'test',
-	        'company' => 'Bayer test',
-	        'industry' => 'pharmaceutical',
-	        'contact' => 'Ms. Test',
-	        'typeTraining' => 'communications',
-	        'potential' => '40',
-        ]);
-*/
+        // $this->validate($request, [
+            // 'rep' => 'string|min:3|max:50',
+         // ]);
+		
+		
+	 
+        // DB::table('prospects')->insert([
+            // 'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+	        // 'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+	        // 'rep' => $request->input('rep'),
+	        // 'consultant' => $request->input('consultant'),
+	        // 'prospect' => $request->input('prospect'),
+			// 'contact' => $request->input('contact'),
+			// 'industry' => 'pharma',
+			// 'region' => 'kansai',
+        // ]);
+
         return view("prospects.create");
     }
 

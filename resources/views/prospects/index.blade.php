@@ -8,15 +8,14 @@
         <br />
         <div class="container">
             <div class="jumbotron">
-                <h1>New Company</h1>
+                <h1>Index of all relevant companies</h1>
             </div>
         </div>
 @endsection
 
 @section("output")
-        <br />
+        <br/>
         @foreach($prospects as $prospect)
-             {{ $prospect }}
-             <br>
+            {{ $prospect }}
         @endforeach
 @endsection

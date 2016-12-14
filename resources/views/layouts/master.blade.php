@@ -27,40 +27,17 @@
                 <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-grain"></span> Client Tracker</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="home">Home</a></li>
                     <!-- DROP DOWN LIST PROSPECTS -->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Prospects<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="prospects">New prospect</a></li>
-                            <li><a href="#">Update prospect</a></li>
-                            <li><a href="#">Search</a></li>
+                            <li><a href="/prospects/create">Create</a></li>
+                            <li><a href="/prospects/index">Show all</a></li>
+                            <li><a href="/propsects/show">Update</a></li>
+                            <li><a href="/prospects/show">Search</a></li>
+                            <li><a href="/prospects/delete">Delete</a></li>
                         </ul>
                     </li>
-                    <!-- DROP DOWN LIST CLIENTS-->
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Clients<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="prospects.create">New client</a></li>
-                            <li><a href="prospects.edit">Update client</a></li>
-                            <li><a href="#">Search</a></li>
-                        </ul>
-                    </li>
-                    <!-- DROP DOWN LIST TRAINING-->
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Training<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">New training</a></li>
-                            <li><a href="#">Update training</a></li>
-                            <li><a href="#">Search</a></li>
-                        </ul>
-                    </li>
-                    <!-- DROP DOWN LIST OPEN COURSES-->
-                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Open Courses<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">HOC</a></li>
-                            <li><a href="#">LOC</a></li>
-                            <li><a href="#">Search</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Request delete</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 					<!-- CUSTOMIZE BASED ON LOGIN STTAUS -->
@@ -69,7 +46,7 @@
 						<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					@else
 						<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
-					@endif                 
+					@endif
                 </ul>
             </div>
         </nav>

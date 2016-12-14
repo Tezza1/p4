@@ -26,14 +26,10 @@ class CreateProspectsTable extends Migration
             # string = varchar(255)
             $table->string('rep');
             $table->string('consultant');
-            $table->string('region');
-            $table->string('company');
-            $table->string('industry')->nullable();
-            $table->string('contact')->nullable();
-            $table->text('additionalInfo')->nullable();
-            $table->string('typeTraining')->nullable();
-            $table->integer('potential');
-            $table->text('additionalInfo2')->nullable();
+            $table->string('prospect');
+			$table->string('contact');
+			 $table->string('industry')->nullable();
+			$table->string('region')->nullable();
         });
     }
 

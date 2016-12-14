@@ -23,6 +23,7 @@
 							<li><a href="prospects/create">Create prospect</a></li>
 							<li><a href="prospects/search">Update a prospect</a></li>
 							<li><a href="prospects/search">Search prospects</a></li>
+							<li><a href="prospects/search">Delete prospect</a></li>
 						</ul>
 					</div>
                     @else
