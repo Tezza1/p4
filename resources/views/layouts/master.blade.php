@@ -39,8 +39,8 @@
                     <!-- DROP DOWN LIST CLIENTS-->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Clients<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">New client</a></li>
-                            <li><a href="#">Update client</a></li>
+                            <li><a href="prospects.create">New client</a></li>
+                            <li><a href="prospects.edit">Update client</a></li>
                             <li><a href="#">Search</a></li>
                         </ul>
                     </li>
@@ -65,11 +65,11 @@
                 <ul class="nav navbar-nav navbar-right">
 					<!-- CUSTOMIZE BASED ON LOGIN STTAUS -->
 					@if(Auth::check())
+					    <li><a>{{ Auth::user()->name }}</a></li>
 						<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					@else
 						<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
 					@endif                 
-					<li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                 </ul>
             </div>
         </nav>

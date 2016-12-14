@@ -15,7 +15,7 @@
 
 @section("forms")
     <div class="container">
-        <form class="form-horizontal" method="post" action="/prospects/store">
+        <form class="form-horizontal" method="post" action="/prospects/create">
             {{ csrf_field() }}
             <legend>SD Contact Point</legend>
             <div class="form-group">
@@ -163,4 +163,8 @@
     @endif
     <br>
 @endsection
+
+
+
+
 

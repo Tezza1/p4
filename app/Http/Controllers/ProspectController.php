@@ -17,7 +17,9 @@ class ProspectController extends Controller
      */
     public function index()
     {
-        return view("prospects");
+        $prospects = Prospect::all();
+       
+        return view('prospects')->with('prospects', $prospects);
     }
 
     /**
@@ -32,11 +34,11 @@ class ProspectController extends Controller
         $this->validate($request, [
             'propsect' => 'string|min:3|max:50',
          ]);
-
+/*
         DB::table('prospects')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
 	        'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        'rep' => 'test',
+	        'rep' => $request->input('rep'),
 	        'consultant' => 'test',
 	        'region' => 'test',
 	        'company' => 'Bayer test',
@@ -44,27 +46,9 @@ class ProspectController extends Controller
 	        'contact' => 'Ms. Test',
 	        'typeTraining' => 'communications',
 	        'potential' => '40',
-        ]); 
-        
-        # Instantiate a new Book Model object
-        $prospect = new Prospect();
-        
-        # Set the parameters
-        # Note how each parameter corresponds to a field in the table
-        $prospect->$_POST["rep"];
-        $prospect->consultant = 'Michael Jones';
-        $prospect->region = 'kansai';
-        $prospect->company = 'Sony';
-        $prospect->industry = 'electronics';
-        $prospect->contact = 'Mr. Nakajima';
-        $prospect->typeTraining = 'leadership';
-        $prospect->potential = 60;
-
-        # Invoke the Eloquent save() method
-        # This will generate a new row in the `books` table, with the above data
-        $prospect->save();       
-
-        return view("prospects");
+        ]);
+*/
+        return view("prospects.create");
     }
 
     /**
@@ -81,12 +65,12 @@ class ProspectController extends Controller
             'propsect' => 'string|min:3|max:50|required',
          ]);
 
-        # Instantiate a new Book Prospect object
+/*        # Instantiate a new Book Prospect object
         $prospect = new Prospect();
 
         # Set the parameters
         # Note how each parameter corresponds to a field in the table
-        $prospect->$request->input('rep');
+        $prospect->rep = 'Mickey Mouse';
         $prospect->consultant = 'Michael Jones';
         $prospect->region = 'kansai';
         $prospect->company = 'Sony';
@@ -96,11 +80,11 @@ class ProspectController extends Controller
         $prospect->potential = 60;
 
         # Invoke the Eloquent save() method
-        # This will generate a new row in the `books` table, with the above data
-        $prospect->save();       
+        # This will generate a new row in the `prospects` table, with the above data
+        $prospect->save();*/
 
 
-        return view("prospects");
+        return view("prospects.create");
     }
 
     /**
@@ -111,8 +95,25 @@ class ProspectController extends Controller
      */
     public function show($id)
     {
-        return ("New propsect showed");
+/*         $prospect = Prospect::find($id);
 
+        if(is_null($prospect) {
+            Session::flash('message','Company not found');
+            return redirect('/prospects');
+        }
+
+        return view('prospectSearch.show')->with([
+            'prospect' => $prospect,
+        ]);
+		
+*/
+
+		$prospects = Prospect::all();
+		dump($prospects);
+		
+		return view("prospects.show")->with([
+        'prospects' => $prospects
+		]);
     }
 
     /**
@@ -124,6 +125,7 @@ class ProspectController extends Controller
     public function edit($id)
     {
         //
+		return view("prospects.edit");
     }
 
     /**
@@ -136,6 +138,7 @@ class ProspectController extends Controller
     public function update(Request $request, $id)
     {
         //
+		return view("prospects.update");
     }
 
     /**
@@ -147,6 +150,6 @@ class ProspectController extends Controller
     public function destroy($id)
     {
         //
-        return ("New propsect deleted");
+        return view("prospects.delete");
     }
 }

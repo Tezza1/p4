@@ -1,6 +1,12 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<br />
+<div class="container">
+    <div class="jumbotron">
+        <h1>Login for the  <span class="glyphicon glyphicon-grain"></span>Client Tracker</h1>
+        </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -50,9 +56,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                                <button type="submit" class="btn">Login</button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Forgot Your Password?
