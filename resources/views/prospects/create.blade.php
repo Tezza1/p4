@@ -8,7 +8,8 @@
         <br />
         <div class="container">
             <div class="jumbotron">
-                <h1>Create a new prospect</h1>
+                <h1><span class="glyphicon glyphicon-grain"></span> Create</h1>
+				<p>Create a new prospect</p>
             </div>
         </div>
 @endsection
@@ -17,7 +18,6 @@
     <div class="container">
         <form class="form-horizontal" method="post" action="/prospects">
             {{ csrf_field() }}
-			<legend>Create propsect</legend>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="rep">Sales Rep:</label>
                 <div class="col-sm-10">
@@ -82,7 +82,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default">Create prospect</button>
                 </div>
             </div>
         </form>

@@ -19,11 +19,11 @@
                         <p>You are logged in</p>
 					<div class="panel-body">
 						<ul class="nav nav-tabs">
-							<li class="active"><a href="home">Home</a></li>
+							<li class="active"><a>Login</a></li>
+                            <li><a href="/prospects">Home</a></li>
 							<li><a href="prospects/create">Create prospect</a></li>
-							<li><a href="prospects/search">Update a prospect</a></li>
+							<li><a href="prospects/search">Update prospect</a></li>
 							<li><a href="prospects/search">Search prospects</a></li>
-							<li><a href="prospects/search">Delete prospect</a></li>
 						</ul>
 					</div>
                     @else

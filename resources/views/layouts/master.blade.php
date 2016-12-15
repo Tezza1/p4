@@ -32,7 +32,7 @@
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Prospects<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/prospects/create">Create</a></li>
-                            <li><a href="/prospects/index">Show all</a></li>
+                            <li><a href="/prospects">Index</a></li>
                             <li><a href="/propsects/show">Update</a></li>
                             <li><a href="/prospects/show">Search</a></li>
                             <li><a href="/prospects/delete">Delete</a></li>
@@ -71,7 +71,7 @@
     <footer>
             <div class="container-fluid">
                 <div class="well">
-                    <a href="#">Client Tracker</a>
+                    <h4>Client Tracker</h4>
                 </div>
             </div>
     </footer>

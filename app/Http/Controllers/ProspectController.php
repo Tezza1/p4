@@ -10,6 +10,7 @@ use p4\Prospect;
 
 class ProspectController extends Controller
 {
+    // INDEX -----------------------------------------------------------
     /**
      * Display a listing of the resource.
      *
@@ -17,11 +18,17 @@ class ProspectController extends Controller
      */
     public function index()
     {
+
         $prospects = Prospect::all();
-       
-        return view('prospects')->with('prospects', $prospects);
+        //dump($prospects);
+
+        return view("prospects.index")->with([
+        'prospects' => $prospects
+        ]);
+        //return view('prospects.index')->with('prospects', $prospects);
     }
 
+    // CREATE -----------------------------------------------------------
     /**
      * Show the form for creating a new resource.
      *
@@ -30,27 +37,10 @@ class ProspectController extends Controller
     public function create(Request $request)
     {
 
-        # validate form input -------------------
-        // $this->validate($request, [
-            // 'rep' => 'string|min:3|max:50',
-         // ]);
-		
-		
-	 
-        // DB::table('prospects')->insert([
-            // 'created_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        // 'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-	        // 'rep' => $request->input('rep'),
-	        // 'consultant' => $request->input('consultant'),
-	        // 'prospect' => $request->input('prospect'),
-			// 'contact' => $request->input('contact'),
-			// 'industry' => 'pharma',
-			// 'region' => 'kansai',
-        // ]);
-
         return view("prospects.create");
     }
 
+    // STORE ----------------------------------------------------------
     /**
      * Store a newly created resource in storage.
      *
@@ -60,33 +50,29 @@ class ProspectController extends Controller
     public function store(Request $request)
     {
 
-        # validate form input -------------------
+        // validate form input -------------------
         $this->validate($request, [
-            'propsect' => 'string|min:3|max:50|required',
+            'rep' => 'string|min:3|max:50|required',
+            'consultant' => 'string|min:3|max:50|required',
+            'prospect' => 'string|min:3|max:50|required',
+            'contact' => 'string|min:3|max:50|required',
          ]);
 
-/*        # Instantiate a new Book Prospect object
         $prospect = new Prospect();
+        $prospect->rep = $request->rep;
+        $prospect->consultant = $request->consultant;
+        $prospect->prospect = $request->prospect;
+        $prospect->contact = $request->contact;
+        $prospect->industry = $request->industry;
+        $prospect->region = $request->region;
+        $prospect->save();
 
-        # Set the parameters
-        # Note how each parameter corresponds to a field in the table
-        $prospect->rep = 'Mickey Mouse';
-        $prospect->consultant = 'Michael Jones';
-        $prospect->region = 'kansai';
-        $prospect->company = 'Sony';
-        $prospect->industry = 'electronics';
-        $prospect->contact = 'Mr. Nakajima';
-        $prospect->typeTraining = 'leadership';
-        $prospect->potential = 60;
+        //Session::flash('flash_message', 'The propsect '.$propsect->prospect.' was added.');
 
-        # Invoke the Eloquent save() method
-        # This will generate a new row in the `prospects` table, with the above data
-        $prospect->save();*/
-
-
-        return view("prospects.create");
+        return redirect("/prospects");
     }
 
+    // SHOW ----------------------------------------------------------------
     /**
      * Display the specified resource.
      *
@@ -95,27 +81,14 @@ class ProspectController extends Controller
      */
     public function show($id)
     {
-/*         $prospect = Prospect::find($id);
+        $prospect = Prospect::find($id);
 
-        if(is_null($prospect) {
-            Session::flash('message','Company not found');
-            return redirect('/prospects');
-        }
-
-        return view('prospectSearch.show')->with([
+        return view('prospects.show')->with([
             'prospect' => $prospect,
         ]);
-		
-*/
-
-		$prospects = Prospect::all();
-		dump($prospects);
-		
-		return view("prospects.show")->with([
-        'prospects' => $prospects
-		]);
     }
 
+    // EDIT ------------------------------------------------------------
     /**
      * Show the form for editing the specified resource.
      *
@@ -124,10 +97,12 @@ class ProspectController extends Controller
      */
     public function edit($id)
     {
-        //
-		return view("prospects.edit");
+        $book = Book::find($id);
+
+        return view("prospects.edit");
     }
 
+    // UPDATE ------------------------------------------------------------
     /**
      * Update the specified resource in storage.
      *
@@ -138,9 +113,10 @@ class ProspectController extends Controller
     public function update(Request $request, $id)
     {
         //
-		return view("prospects.update");
+        return view("prospects.update");
     }
 
+    // DESTROY ----------------------------------------------------------
     /**
      * Remove the specified resource from storage.
      *
