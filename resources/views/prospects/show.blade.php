@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" class="btn btn-default">Seach for a prospect</button>
                 </div>
             </div>
         </form>
@@ -38,38 +38,5 @@
 @endsection
 
 @section("output")
-    <div class="container">
-            <div class="table-responsive">
-            <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Sales Rep</th>
-                        <th>Consultant</th>
-                        <th>Prospect</th>
-                        <th>Contact</th>
-                        <th>Industry</th>
-                        <th>Region</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($prospects as $prospect)
-                        <tr>
-                            <td>{{ $prospect->rep }}</td>
-                            <td>{{ $prospect->consultant }}</td>
-                            <td>{{ $prospect->prospect }}</td>
-                            <td>{{ $prospect->contact }}</td>
-                            <td>{{ $prospect->industry }}</td>
-                            <td>{{ $prospect->region }}</td>
-                        <tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
-    </div>
 @endsection
 
-
-
-
-
- 

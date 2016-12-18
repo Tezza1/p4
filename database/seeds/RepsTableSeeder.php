@@ -26,14 +26,22 @@ class RepsTableSeeder extends Seeder
             'team' => 'two',
             'region' => 'kansai',
         ]);
-        
+
         DB::table('reps')->insert([
             'created_at' => Carbon\Carbon::now()->toDateTimeString(),
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-            'rep' => 'jill',
+            'rep' => 'terry',
             'team' => 'one',
             'region' => 'kanto',
-        ]);        
-        
+        ]);
+
+        DB::table('reps')->insert([
+            'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+            'rep' => 'susan',
+            'team' => 'three',
+            'region' => 'tokai',
+        ]);
+
     }
 }

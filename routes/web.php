@@ -13,7 +13,7 @@
 
 Route::get("/", function () {
     return view("home");
-}); 
+});
 
 // AUTHENTIFICATION ------------------------------------------------------ 
 
@@ -47,7 +47,7 @@ Route::get('/prospects/create', 'ProspectController@create')->name('prospects.cr
 Route::post('/prospects', 'ProspectController@store')->name('prospects.store');
 
 # Show an individual prospect
-Route::get('/prospects/{title}', 'ProspectController@show')->name('prospects.show');
+Route::get('/prospects/{prospect}', 'ProspectController@show')->name('prospects.show');
 
 # Show form to edit a prospect
 Route::get('/prospects/{id}/edit', 'ProspectController@edit')->name('prospects.edit');
@@ -70,25 +70,25 @@ Route::resource('reps', 'RepController');
 
 // Test database connection
 Route::get('/debug', function() {
-	echo '<pre>';
-	echo '<h1>Environment</h1>';
-	echo App::environment().'</h1>';
-	echo '<h1>Debugging?</h1>';
+    echo '<pre>';
+    echo '<h1>Environment</h1>';
+    echo App::environment().'</h1>';
+    echo '<h1>Debugging?</h1>';
 
-	if(config('app.debug'))
-		echo "Yes";
-	else
-		echo "No";
+    if(config('app.debug'))
+        echo "Yes";
+    else
+        echo "No";
 
-	echo '<h1>Database Config</h1>';
+    echo '<h1>Database Config</h1>';
 
-	echo '<h1>Test Database Connection</h1>';
-	try {
-		$results = DB::select('SHOW DATABASES;');
-		echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
-		echo "<br><br>Your Databases:<br><br>"; print_r($results);
-	} catch (Exception $e) {
-		echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n"; } echo '</pre>'; });
+    echo '<h1>Test Database Connection</h1>';
+    try {
+        $results = DB::select('SHOW DATABASES;');
+        echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
+        echo "<br><br>Your Databases:<br><br>"; print_r($results);
+    } catch (Exception $e) {
+        echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n"; } echo '</pre>'; });
 
 if(App::environment('local')) {
 

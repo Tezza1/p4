@@ -9,7 +9,7 @@
         <div class="container">
             <div class="jumbotron">
                 <h1><span class="glyphicon glyphicon-grain"></span> Create</h1>
-				<p>Create a new prospect</p>
+                <p>Create a new prospect</p>
             </div>
         </div>
 @endsection
@@ -18,15 +18,35 @@
     <div class="container">
         <form class="form-horizontal" method="post" action="/prospects">
             {{ csrf_field() }}
+            <legend>Rep information</legend>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="rep">Sales Rep:</label>
                 <div class="col-sm-10">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="rep" id="rep" placeholder="Enter sales sep">
+                        <input type="text" class="form-control" name="rep" id="rep" placeholder="Enter Sales Rep">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="team">Team:</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="team" id="team" placeholder="Enter the team">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-paperclip"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="region">Region:</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="region" id="region" placeholder="Enter the region">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+                    </div>
+                </div>
+            </div>
+            <legend>Client information</legend>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="consultant">Consultant:</label>
                 <div class="col-sm-10">
@@ -54,7 +74,7 @@
                     </div>
                 </div>
             </div>
-			<div class="form-group">
+            <div class="form-group">
                 <label class="control-label col-sm-2" for="industry">Industry:</label>
                 <div class="col-sm-10">
                     <select class="form-control" id="industry" name="industry">
@@ -70,7 +90,7 @@
                    </select>
                 </div>
             </div>
-			<div class="form-group">
+            <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="radio" id="region">
                         <label class="radio-inline"><input type="radio" name="optRegion" value="kanto">Kanto</label>
@@ -93,15 +113,15 @@
 @section("error")
     <br>
     @if(count($errors) > 0)
-		<div class="container">
-			<div class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li><strong>{{ $error }}</strong></li>
-					@endforeach
-				</ul>
-			</div>
-		</div>
+        <div class="container">
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li><strong>{{ $error }}</strong></li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     @endif
     <br>
 @endsection

@@ -6,18 +6,18 @@
 
 
 @section("overview")
-        <br />
-        <div class="container">
-            <div class="jumbotron">
-                <h1><span class="glyphicon glyphicon-grain"></span> Index</h1>
-                <p>Lists all avaialble prospects</p>
-            </div>
+    <br />
+    <div class="container">
+        <div class="jumbotron">
+            <h1><span class="glyphicon glyphicon-grain"></span> Index</h1>
+            <p>Lists all avaialble prospects</p>
         </div>
+    </div>
 @endsection
 
 @section("output")
     <div class="container">
-            <div class="table-responsive">
+        <div class="table-responsive">
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -32,13 +32,13 @@
                 <tbody>
                     @foreach($prospects as $prospect)
                         <tr>
-                            <td>{{ $prospect->rep }}</td>
+                            <td>{{ $prospect->rep->rep }}</td>
                             <td>{{ $prospect->consultant }}</td>
                             <td>{{ $prospect->prospect }}</td>
                             <td>{{ $prospect->contact }}</td>
                             <td>{{ $prospect->industry }}</td>
                             <td>{{ $prospect->region }}</td>
-                        <tr>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
