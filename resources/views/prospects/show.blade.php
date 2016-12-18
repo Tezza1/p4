@@ -1,42 +1,63 @@
 @extends("layouts.master")
 
 @section("title")
-    Show a prospect
+    Show: {{ $prospect->prospect }}    
 @endsection
 
 @section("overview")
         <br />
         <div class="container">
             <div class="jumbotron">
-                <h1><span class="glyphicon glyphicon-grain"></span> Find</h1>
-                <p>Search for prospects</p>
+                <h1><span class="glyphicon glyphicon-grain"></span> Show</h1>
+                <p>Show propsect: {{ $prospect->prospect }}</p>
             </div>
         </div>
 @endsection
 
-@section("forms")
+@section("output")
     <div class="container">
-        <form class="form-horizontal" method="post" action="/prospects">
-            {{ csrf_field() }}
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="prospect">Prospect:</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="prospect" id="prospect" placeholder="Enter prospect">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                    </div>
-                </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sales Rep</th>
+                        <th>Consultant</th>
+                        <th>Prospect</th>
+                        <th>Contact</th>
+                        <th>Industry</th>
+                        <th>Region</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>{{ $prospect->rep->rep }}</td>
+                            <td>{{ $prospect->consultant }}</td>
+                            <td>{{ $prospect->prospect }}</td>
+                            <td>{{ $prospect->contact }}</td>
+                            <td>{{ $prospect->industry }}</td>
+                            <td>{{ $prospect->region }}</td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <br />
+            <div class="col-sm-4">
+                <a class='button' href='/prospects/{{ $prospect->id }}/edit'><span class="glyphicon glyphicon-pencil"></span> Edit</a>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Seach for a prospect</button>
-                </div>
+            <div class="col-sm-4">
+                <a class='button' href='/prospects/{{ $prospect->id }}/delete'><span class="glyphicon glyphicon-remove"></span> Delete</a>   
             </div>
-        </form>
-    </div><!-- end container -->
-    <br />
+            <div class="col-sm-4">
+                 <a class='button' href='/prospects '><span class="glyphicon glyphicon-search"></span> Search again</a>     
+            </div>          
+        </div>
+        <br />
+    </div>
 @endsection
 
-@section("output")
-@endsection
+
+
+
+
 

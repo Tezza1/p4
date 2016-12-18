@@ -8,6 +8,7 @@ use DB;
 use Carbon;
 use p4\Prospect;
 use p4\Rep;
+use Session;
 
 class ProspectController extends Controller
 {
@@ -28,7 +29,6 @@ class ProspectController extends Controller
         return view("prospects.index")->with([
         'prospects' => $prospects
         ]);
-        //return view('prospects.index')->with('prospects', $prospects);
     }
 
     // CREATE -----------------------------------------------------------
@@ -78,8 +78,8 @@ class ProspectController extends Controller
         $prospect->save();
 
 
-
-        //Session::flash('flash_message', 'The propsect '.$propsect->prospect.' was added.');
+        // send confirmation message
+        Session::flash('flash_message', 'The propsect '.$prospect->prospect.' was added.');
 
         return redirect("/prospects");
     }
@@ -91,48 +91,24 @@ class ProspectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //public function show($id)
     public function show($id)
     {
-
-        # Get the first book as an example
-        //$prospects = Prospect::where("rep");
-        //dump($prospects);
-
-        # Eager load the author with the book
-        //$prospects = Prospect::where("industry", "auto")->where("region", "")->get();
-        //$prospects = Prospect::where("prospect", "Bayer Pharma")->get();
-        // Retrieve a model by its primary key...
-//$flight = App\Flight::find(1);
-        $prospects = Prospect::find($id);
-        dump($prospects);
-
-// Retrieve the first model matching the query constraints...
-//$flight = App\Flight::where('active', 1)->first();
-//You may also call the find method with an array of primary keys, which will return a collection of the matching records:
-
-//$flights = App\Flight::find([1, 2, 3])
-
-        return view("prospects.show")->with([
-        'prospects' => $prospects
+        
+        if(is_null($prospect)) {
+            Session::flash('message','Prospect not found');
+            return redirect('/prospects');
+        }
+        
+         $prospect = Prospect::find($id);
+         dump($prospect->toArray());
+  
+        return view('prospects.show')->with([
+            'prospect' => $prospect,
         ]);
-        // get prospects where there is a rep
-         //$prospects = Prospect::with('rep')->get();
-        //dump($prospect->toArray());
+        
+
     }
-
-    // public function show($id)
-    // {
-    //     $book = Book::find($id);
-
-    //     if(is_null($book)) {
-    //         Session::flash('message','Book not found');
-    //         return redirect('/books');
-    //     }
-
-    //     return view('book.show')->with([
-    //         'book' => $book,
-    //     ]);
-    // }
 
     // EDIT ------------------------------------------------------------
     /**
@@ -143,9 +119,12 @@ class ProspectController extends Controller
      */
     public function edit($id)
     {
-        $book = Book::find($id);
-
-        return view("prospects.edit");
+         $prospect = Prospect::find($id);
+         // dump($prospect->toArray());
+  
+        return view('prospects.edit')->with([
+            'prospect' => $prospect,
+        ]);
     }
 
     // UPDATE ------------------------------------------------------------
@@ -158,8 +137,25 @@ class ProspectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return view("prospects.update");
+       // validate form input -------------------
+        $this->validate($request, [
+            'consultant' => 'string|min:3|max:50|required',
+            'prospect' => 'string|min:3|max:50|required',
+            'contact' => 'string|min:3|max:50|required',
+         ]);
+        
+       // Find and update
+        $prospect = Prospect::find($request->id);
+        $prospect->consultant = $request->consultant;
+        $prospect->prospect = $request->prospect;
+        $prospect->contact = $request->contact;
+        $prospect->industry = $request->industry;
+        $prospect->save();
+        
+        // send confirmation message
+        Session::flash('flash_message', 'Your changes to '.$prospect->prospect.' were saved.');
+        
+        return redirect("prospects");
     }
 
     // DESTROY ----------------------------------------------------------
@@ -171,7 +167,14 @@ class ProspectController extends Controller
      */
     public function destroy($id)
     {
-        //
-        return view("prospects.delete");
+        // Find and delete
+        $prospect = Prospect::find($request->id);
+        $prospect->delete();
+
+       // send confirmation message
+        Session::flash('flash_message', $prospect->prospect.' was deleted.');
+
+        return redirect('/prospects');
     }
+     
 }

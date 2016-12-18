@@ -8,24 +8,51 @@
         <br />
         <div class="container">
             <div class="jumbotron">
-                <h1>Edit</h1>
-                <p>Edit the rpsoect: {{ $prospect->prospect }}</p>
+                <h1><span class="glyphicon glyphicon-grain"></span> Edit</h1>
+                <p>Edit the prospect: {{ $prospect->prospect }}</p>
             </div>
         </div>
 @endsection
 
 @section("forms")
-    <div class="container">
-        <form class="form-horizontal" method="post" action="/prospects">
-            {{ csrf_field() }}
+   <div class="container">
+        <form class="form-horizontal" method="post" action="/prospects/{{ $prospect->id }}">
             {{ method_field('PUT') }}
-            <input name='id' value='{{$prospects->id}}' type='hidden'>
+            {{ csrf_field() }}
+            <input name='id' value='{{$prospect->id}}' type='hidden'>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="prospect">Prospect:</label>
-                <div class="col-sm-10">
+                <div class="col-sm-10"> 
                     <div class="input-group">
                         <input type="text" class="form-control" name="prospect" id="prospect" value='{{ old('prospect', $prospect->prospect) }}'>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="contact">Contact person:</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="contact" name="contact" value='{{ old('contact', $prospect->contact) }}'>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    </div>
+                </div>
+            </div>
+           <div class="form-group">
+                <label class="control-label col-sm-2" for="industry">Industry:</label>
+                <div class="col-sm-10">
+                   <div class="input-group">
+                        <input type="text" class="form-control" id="industry" name="industry" value='{{ old('industry', $prospect->industry) }}'>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+                    </div>
+                </div>
+           </div>
+          <div class="form-group">
+                <label class="control-label col-sm-2" for="consultant">Consultant:</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="consultant" name="consultant" value='{{ old('consultant', $prospect->consultant) }}'>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     </div>
                 </div>
             </div>
@@ -39,10 +66,24 @@
     <br />
 @endsection
 
-@section("output")
-        <br />
-        @foreach($prospects as $prospect)
-             {{ $prospect }}
-             <br>
-        @endforeach
+@section("error")
+    <br>
+    @if(count($errors) > 0)
+        <div class="container">
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li><strong>{{ $error }}</strong></li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
+    <br>
 @endsection
+
+
+
+
+
+

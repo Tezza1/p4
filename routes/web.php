@@ -37,13 +37,13 @@ Route::get('/show-login-status', function() {
 
 
 // PROSPECT CONTROLLER ---------------------------------------------------
-# Index page to show all the prospects
+// Index page to show all the prospects
 Route::get('/prospects', 'ProspectController@index')->name('prospects.index')->middleware('auth');
 
-# Show a form to create a new prospect
+// Show a form to create a new prospect
 Route::get('/prospects/create', 'ProspectController@create')->name('prospects.create')->middleware('auth');
 
-# Process the form to create a new prospect
+// Process the form to create a new prospect
 Route::post('/prospects', 'ProspectController@store')->name('prospects.store');
 
 # Show an individual prospect

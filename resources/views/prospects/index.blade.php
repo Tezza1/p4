@@ -43,6 +43,19 @@
                 </tbody>
             </table>
         </div>
+        <div class="row">
+            <br />
+            <div class="col-sm-4">
+                <a class='button' href='/prospects/{{ $prospect->id }}/edit'><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+            </div>
+            <div class="col-sm-4">
+                 <a class='button' href='/prospects/{{ $prospect->id }}'><span class="glyphicon glyphicon-search"></span> View</a>     
+            </div>
+            <div class="col-sm-4">
+                <a class='button' href='/prospects/{{ $prospect->id }}/delete'><span class="glyphicon glyphicon-remove"></span> Delete</a>   
+            </div>          
+        </div>
+        <br />
     </div>
 @endsection
 
