@@ -159,6 +159,13 @@ class ProspectController extends Controller
     }
 
     // DESTROY ----------------------------------------------------------
+    
+    // confirm deleteion
+    public function delete($id) {
+        $prospect = Prospect::find($id);
+        return view('prospects.delete')->with('prospect', $prospect);
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
@@ -168,7 +175,7 @@ class ProspectController extends Controller
     public function destroy($id)
     {
         // Find and delete
-        $prospect = Prospect::find($request->id);
+        $prospect = Prospect::find($id);
         $prospect->delete();
 
        // send confirmation message
