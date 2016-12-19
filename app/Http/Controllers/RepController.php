@@ -3,6 +3,12 @@
 namespace p4\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Carbon;
+use p4\Prospect;
+use p4\Rep;
+use Session;
+
 
 class RepController extends Controller
 {
@@ -13,7 +19,11 @@ class RepController extends Controller
      */
     public function index()
     {
-        //
+        $reps = Rep::all()->sortBy("rep");
+
+        return view("reps.index")->with([
+        'reps' => $reps,        
+        ]);
     }
 
     /**
@@ -45,7 +55,11 @@ class RepController extends Controller
      */
     public function show($id)
     {
-        //
+        $rep = Rep::find($id);
+  
+        return view('reps.show')->with([
+            'rep' => $rep,
+        ]);
     }
 
     /**
@@ -56,7 +70,11 @@ class RepController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rep = Rep::find($id);
+  
+        return view('reps.edit')->with([
+            'rep' => $rep,
+       ]);
     }
 
     /**
@@ -68,7 +86,30 @@ class RepController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate form input -------------------
+        $this->validate($request, [
+            'rep' => 'string|min:3|max:50|required',
+            'team' => 'string|min:3|max:50|required',
+         ]);
+        
+       // Find and update
+        $rep= Rep::find($request->id);
+        $rep->rep = $request->rep;
+        $rep->team = $request->team;
+        $rep->save();
+        
+        // send confirmation message
+        Session::flash('flash_message', 'Your changes to '.$rep->rep.' were saved.');
+        
+        return redirect("reps");
+    }
+    
+    // confirm deleteion
+    public function delete($id) {
+
+        $rep = Rep::find($id);
+
+        return view('reps.delete')->with('rep', $rep);
     }
 
     /**

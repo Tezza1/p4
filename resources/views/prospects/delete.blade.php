@@ -22,20 +22,12 @@
                 {{ csrf_field() }}
                 <br>
                 <h2>Final confirmation</h2>
-                <p>Confirm request to <strong>{{ $prospect->prospect }}</strong></p>
+                <p>Confirm request to delete <strong>{{ $prospect->prospect }}</strong></p>
                 <br>
                  <button type="submit" class="btn btn-danger">Delete</button
             </form>
             <br/>
         </div>
     </div>
-
-
-
-
-       
-        
-  
-
 @endsection
 

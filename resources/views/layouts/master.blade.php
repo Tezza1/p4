@@ -31,11 +31,13 @@
                     <!-- DROP DOWN LIST PROSPECTS -->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Prospects<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/prospects/create">Create</a></li>
                             <li><a href="/prospects">Index</a></li>
-                            <li><a href="/propsects/show">Update</a></li>
-                            <li><a href="/prospects/show">Search</a></li>
-                            <li><a href="/prospects/delete">Delete</a></li>
+                            <li><a href="/prospects/create">Create</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reps<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/reps">Index</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -43,7 +45,7 @@
 					<!-- CUSTOMIZE BASED ON LOGIN STTAUS -->
 					@if(Auth::check())
 					    <li><a>{{ Auth::user()->name }}</a></li>
-						<li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="http://localhost/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					@else
 						<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
 					@endif

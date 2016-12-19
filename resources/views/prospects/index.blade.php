@@ -10,13 +10,15 @@
     <div class="container">
         <div class="jumbotron">
             <h1><span class="glyphicon glyphicon-grain"></span> Index</h1>
-            <p>Lists all avaialble prospects</p>
+            <p>Lists all available prospects alphabetically</p>
         </div>
     </div>
 @endsection
 
 @section("output")
     <div class="container">
+        <h3>Click on the Prospect below to make changes</h3>
+        <br/>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
                 <thead>
@@ -34,7 +36,7 @@
                         <tr>
                             <td>{{ $prospect->rep->rep }}</td>
                             <td>{{ $prospect->consultant }}</td>
-                            <td>{{ $prospect->prospect }}</td>
+                            <td><a href="/prospects/{{ $prospect->id }}">{{ $prospect->prospect }}</a></td>
                             <td>{{ $prospect->contact }}</td>
                             <td>{{ $prospect->industry }}</td>
                             <td>{{ $prospect->region }}</td>
@@ -43,19 +45,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="row">
-            <br />
-            <div class="col-sm-4">
-                <a class='button' href='/prospects/{{ $prospect->id }}/edit'><span class="glyphicon glyphicon-pencil"></span> Edit</a>
-            </div>
-            <div class="col-sm-4">
-                 <a class='button' href='/prospects/{{ $prospect->id }}'><span class="glyphicon glyphicon-search"></span> View</a>     
-            </div>
-            <div class="col-sm-4">
-                <a class='button' href='/prospects/{{ $prospect->id }}/delete'><span class="glyphicon glyphicon-remove"></span> Delete</a>   
-            </div>          
-        </div>
-        <br />
+        <br/>
     </div>
 @endsection
 

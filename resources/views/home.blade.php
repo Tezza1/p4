@@ -22,8 +22,7 @@
 							<li class="active"><a>Login</a></li>
                             <li><a href="/prospects">Home</a></li>
 							<li><a href="prospects/create">Create prospect</a></li>
-							<li><a href="prospects/search">Update prospect</a></li>
-							<li><a href="prospects/search">Search prospects</a></li>
+							<li><a href="prospects/">List prospects</a></li>
 						</ul>
 					</div>
                     @else

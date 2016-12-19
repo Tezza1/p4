@@ -16,7 +16,6 @@ class RepsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'rep' => 'jill',
             'team' => 'one',
-            'region' => 'kanto',
         ]);
 
         DB::table('reps')->insert([
@@ -24,7 +23,6 @@ class RepsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'rep' => 'jamal',
             'team' => 'two',
-            'region' => 'kansai',
         ]);
 
         DB::table('reps')->insert([
@@ -32,7 +30,6 @@ class RepsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'rep' => 'terry',
             'team' => 'one',
-            'region' => 'kanto',
         ]);
 
         DB::table('reps')->insert([
@@ -40,7 +37,6 @@ class RepsTableSeeder extends Seeder
             'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
             'rep' => 'susan',
             'team' => 'three',
-            'region' => 'tokai',
         ]);
 
     }

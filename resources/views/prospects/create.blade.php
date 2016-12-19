@@ -37,15 +37,6 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="region">Region:</label>
-                <div class="col-sm-10">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="region" id="region" placeholder="Enter the region">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
-                    </div>
-                </div>
-            </div>
             <legend>Client information</legend>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="consultant">Consultant:</label>
@@ -90,14 +81,17 @@
                    </select>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="radio" id="region">
-                        <label class="radio-inline"><input type="radio" name="optRegion" value="kanto">Kanto</label>
-                        <label class="radio-inline"><input type="radio" name="optRegion" value="kansai">Kansai</label>
-                        <label class="radio-inline"><input type="radio" name="optRegion" value="tokai">Tokai</label>
-                        <label class="radio-inline"><input type="radio" name="optRegion" value="other" disabled>Other</label>
-                    </div>
+             <legend>Location</legend>
+             <div class="form-group">
+                <label class="control-label col-sm-2" for="region">Region:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="region" name="region">
+                        <option value="">No region selected</option>
+                        <option value="kanto">Kanto</option>
+                        <option value="kansai">Kansai</option>
+                        <option value="tokai">Tokai</option>
+                        <option value="other">Other</option>
+                   </select>
                 </div>
             </div>
             <div class="form-group">

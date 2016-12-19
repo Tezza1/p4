@@ -21,9 +21,8 @@ class ProspectController extends Controller
     public function index()
     {
 
-        # Eager load the author with the book
-        $prospects = Prospect::with('rep')->get();
-
+        $prospects = Prospect::with('rep')->get()->sortBy("prospect");
+        //$prospects = $prospects::orderBy('prospect');
         //dump($prospects->toArray());
 
         return view("prospects.index")->with([
@@ -65,7 +64,6 @@ class ProspectController extends Controller
         $rep = new Rep;
         $rep->rep = $request->rep;
         $rep->team = $request->team;
-        $rep->region = $request->region;
         $rep->save();
 
         $prospect = new Prospect;
@@ -94,20 +92,12 @@ class ProspectController extends Controller
     //public function show($id)
     public function show($id)
     {
-        
-        if(is_null($prospect)) {
-            Session::flash('message','Prospect not found');
-            return redirect('/prospects');
-        }
-        
          $prospect = Prospect::find($id);
-         dump($prospect->toArray());
   
         return view('prospects.show')->with([
             'prospect' => $prospect,
         ]);
         
-
     }
 
     // EDIT ------------------------------------------------------------
@@ -150,6 +140,7 @@ class ProspectController extends Controller
         $prospect->prospect = $request->prospect;
         $prospect->contact = $request->contact;
         $prospect->industry = $request->industry;
+        $prospect->region = $request->region;
         $prospect->save();
         
         // send confirmation message
@@ -162,7 +153,9 @@ class ProspectController extends Controller
     
     // confirm deleteion
     public function delete($id) {
+
         $prospect = Prospect::find($id);
+
         return view('prospects.delete')->with('prospect', $prospect);
     }
     

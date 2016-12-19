@@ -47,7 +47,7 @@
                     </div>
                 </div>
            </div>
-          <div class="form-group">
+           <div class="form-group">
                 <label class="control-label col-sm-2" for="consultant">Consultant:</label>
                 <div class="col-sm-10">
                     <div class="input-group">
@@ -55,7 +55,16 @@
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                     </div>
                 </div>
-            </div>
+           </div>
+          <div class="form-group">
+                <label class="control-label col-sm-2" for="region">Region:</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="region" name="region" value='{{ old('region', $prospect->region) }}'>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-road"></i></span>
+                    </div>
+                </div>
+           </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-default">Edit prospect</button>

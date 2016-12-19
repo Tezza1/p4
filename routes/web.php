@@ -18,7 +18,7 @@ Route::get("/", function () {
 // AUTHENTIFICATION ------------------------------------------------------ 
 
 Auth::routes();
-// Route::get('/logout','Auth\LoginController@logout')->name('logout');
+Route::get('/logout','Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'HomeController@index');
 
 
@@ -64,41 +64,21 @@ Route::delete('/prospects/{id}', 'ProspectController@destroy')->name('prospects.
 //Route::resource('prospects', 'ProspectController');
 
 // REP CONTROLLER --------------------------------------------------------
-Route::resource('reps', 'RepController');
+// Index page to show all the prospects
+Route::get('/reps', 'RepController@index')->name('reps.index');
 
-// DATABASE --------------------------------------------------------------- 
+# Show an individual prospect
+Route::get('/reps/{prospect}', 'RepController@show')->name('reps.show');
 
-// Test database connection
-Route::get('/debug', function() {
-    echo '<pre>';
-    echo '<h1>Environment</h1>';
-    echo App::environment().'</h1>';
-    echo '<h1>Debugging?</h1>';
+# Show form to edit a prospect
+Route::get('/reps/{id}/edit', 'RepController@edit')->name('reps.edit');
 
-    if(config('app.debug'))
-        echo "Yes";
-    else
-        echo "No";
+# Process form to edit a prospect
+Route::put('/reps/{id}', 'RepController@update')->name('reps.update');
 
-    echo '<h1>Database Config</h1>';
+# Get route to confirm deletion of prospect
+Route::get('/reps/{id}/delete', 'RepController@delete')->name('reps.destroy');
 
-    echo '<h1>Test Database Connection</h1>';
-    try {
-        $results = DB::select('SHOW DATABASES;');
-        echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
-        echo "<br><br>Your Databases:<br><br>"; print_r($results);
-    } catch (Exception $e) {
-        echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n"; } echo '</pre>'; });
 
-if(App::environment('local')) {
 
-    Route::get('/drop', function() {
-
-        DB::statement('DROP database p4');
-        DB::statement('CREATE database p4');
-
-        return 'Dropped p4; created p4.';
-    });
-
-};
 

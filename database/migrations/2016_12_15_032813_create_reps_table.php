@@ -26,7 +26,6 @@ class CreateRepsTable extends Migration
             # string = varchar(255)
             $table->string('rep');
             $table->string('team');
-			$table->string('region')->nullable();
         });
     }
 
