@@ -1,4 +1,4 @@
-# This is the p3 project for dwa15
+# This is the p4 project for dwa15
 
 ## Project object:
 + To implement a website using the Laravel framework
