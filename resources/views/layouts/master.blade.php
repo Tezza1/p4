@@ -24,7 +24,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-grain"></span> Client Tracker</a>
+                <a class="navbar-brand" href="/prospects"><span class="glyphicon glyphicon-grain"></span> Client Tracker</a>
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="home">Home</a></li>
@@ -45,7 +45,7 @@
 					<!-- CUSTOMIZE BASED ON LOGIN STTAUS -->
 					@if(Auth::check())
 					    <li><a>{{ Auth::user()->name }}</a></li>
-						<li><a href="http://localhost/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="p4.terrywebdev.me/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					@else
 						<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
 					@endif
