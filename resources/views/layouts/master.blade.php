@@ -27,7 +27,7 @@
                 <a class="navbar-brand" href="/prospects"><span class="glyphicon glyphicon-grain"></span> Client Tracker</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li><a href="home">Home</a></li>
+                    <li><a href="/prospects">Home</a></li>
                     <!-- DROP DOWN LIST PROSPECTS -->
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Prospects<span class="caret"></span></a>
                         <ul class="dropdown-menu">
