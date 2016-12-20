@@ -45,7 +45,7 @@
 					<!-- CUSTOMIZE BASED ON LOGIN STTAUS -->
 					@if(Auth::check())
 					    <li><a>{{ Auth::user()->name }}</a></li>
-						<li><a href="p4.terrywebdev.me/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+						<li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 					@else
 						<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
 					@endif
